@@ -26,7 +26,7 @@ def get_metrics(RESULTS_PATH: str, test: pd.DataFrame):
             id = lambda df_: df_['id'].astype('int32'),
             real = lambda df_: df_['real'].astype('object')
         )
-        .merge(test, how='inner')
+        .merge(test, how='inner', on='id')
         .assign(
             correct = lambda df_: df_['real'] == df_['preds'], 
             deads = lambda df_: np.where((df_['real']==1) & (df_['preds']==0), True, False),
