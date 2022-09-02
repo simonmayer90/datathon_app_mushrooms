@@ -1,12 +1,11 @@
 students = [
-    "Impure Regressors", # Sebastian & Aslam
+    "Impure Regressors", # Sebastian & Aslam & Komal
     "Daniel_A",
     "Daniel_D",
     "Huy",
     "Icaro",
     "Ilkay",
     "Kayla",
-    "Komal",
     "Nabil",
     "Orjada",
     "Peter",
