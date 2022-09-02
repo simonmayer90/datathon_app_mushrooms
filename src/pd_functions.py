@@ -95,7 +95,7 @@ def show_leaderboard():
     st.dataframe(
     pd.read_pickle('files_to_update/submissions.pkl')
         .assign(attempts = lambda df_: df_.groupby('participant')['participant'].transform('count'))
-        .sort_values(['deads','opportunity_cost'], ascending=True)
+        .sort_values(['deads','opportunity_cost'], ascending=[True, True, False])
         .drop_duplicates(['participant'], keep='first')
         .assign(position = lambda df_: range(1, len(df_)+1)) 
         .set_index('position')  
