@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 import numpy as np
+import os
 
 
 def get_ready_test(RESULTS_PATH: str, uploaded_file):
@@ -110,14 +111,22 @@ def update_submissions(participant_results: pd.DataFrame):
     """
     This function updates the submissions.pkl file with the
     new results."""
+    
+    submissions_path = 'files_to_update/submissions.pkl'
+
+    if os.path.isfile(submissions_path):
+        all_submissions = pd.read_pickle(submissions_path)
+    else:
+        all_submissions = pd.DataFrame()
 
     (
         pd.concat([
-            pd.read_pickle('files_to_update/submissions.pkl'),
+            all_submissions,
             participant_results
         ])
-        .to_pickle('files_to_update/submissions.pkl')
+        .to_pickle(submissions_path)
     )
+
 
 
 def show_leaderboard():
