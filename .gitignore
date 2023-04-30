@@ -1,0 +1,25 @@
+# .gitignore
+
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter Notebook
+*.ipynb_checkpoints
+# ignore notebooks
+*.ipynb
+
+
+# Temp files
+*.log
+*.tmp
+
+# Config files
+*.ini
+*.yaml
+*.json
+
+# Cache files
+.cache
+.cache/*
