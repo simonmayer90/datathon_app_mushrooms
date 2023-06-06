@@ -32,7 +32,7 @@ def get_participant_name():
 
     if st.session_state.text_input != "":
         text_input_container.empty()
-        st.info(f'Participant name {st.session_state.text_input}')
+        st.info(f'Participant name: {st.session_state.text_input}')
         return st.session_state.text_input
 
     return None
