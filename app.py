@@ -2,6 +2,12 @@ import streamlit as st
 import pandas as pd
 from src.pd_functions import *
 
+st.set_page_config(page_title="Mushrooms Competition - Result Checker",
+                   page_icon="🍄",
+                   # initial_sidebar_state="expanded",
+                   # layout="wide"
+                   )
+
 # Path to results
 RESULTS_PATH = 'data/results.csv'
 
